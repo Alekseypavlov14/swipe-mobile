@@ -1,6 +1,6 @@
 {
   "name": "swipe-mobile",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Swipe handler for JavaScript applications",
   "main": "./build/index.js",
   "scripts": {
