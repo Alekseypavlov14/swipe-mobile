@@ -1,12 +1,14 @@
 {
   "name": "swipe-mobile",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Swipe handler for JavaScript applications",
   "main": "./build/index.js",
   "scripts": {
     "build": "webpack"
   },
-  "files": ["build"],
+  "files": [
+    "build"
+  ],
   "keywords": [
     "swipe",
     "swiper",
