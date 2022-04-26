@@ -2,8 +2,8 @@ import { SwipeEvent } from './lib/SwipeEvent'
 import { EventStore } from './lib/EventStore'
 import { AddSwipeEvent } from './lib/AddSwipeEvent'
 
-import { calcDistance } from './calculations/calcDistance'
-import { calcAngle } from './calculations/calcAngle'
+import { touchEndHandler } from './handlers/touchEndHandler'
+import { touchMoveHandler } from './handlers/touchMoveHandler'
 
 function initSwipe(element: HTMLElement) {
     const store: EventStore = {}
@@ -27,40 +27,24 @@ function initSwipe(element: HTMLElement) {
         SwipeEvent.target = e.target
     })
 
-    element.addEventListener('touchmove', (e) => {})
+    element.addEventListener('touchmove', (e) => {
+        touchMoveHandler(e, SwipeEvent, store)
+    })
 
     element.addEventListener('touchend', (e) => {
-        const TouchEndEvent = e.changedTouches[0]
-
-        SwipeEvent.x = TouchEndEvent.clientX
-        SwipeEvent.y = TouchEndEvent.clientY
-
-        SwipeEvent.distance = calcDistance(SwipeEvent)
-        SwipeEvent.angle = calcAngle(SwipeEvent)
-
-        if (SwipeEvent.distance > 40) {
-            const vector = Math.floor((SwipeEvent.angle + 45) / 90) % 4
-
-            if (vector === 0) return store.rightSwipeHandler && store.rightSwipeHandler(SwipeEvent)
-            if (vector === 1) return store.topSwipeHandler && store.topSwipeHandler(SwipeEvent)
-            if (vector === 2) return store.leftSwipeHandler && store.leftSwipeHandler(SwipeEvent)
-            if (vector === 3) return store.bottomSwipeHandler && store.bottomSwipeHandler(SwipeEvent)
-        }
+        touchEndHandler(e, SwipeEvent, store)
     })
 
     const AddEvent: AddSwipeEvent = {
-        left: (callback) => {
-            store.leftSwipeHandler = callback
-        },
-        right: (callback) => {
-            store.rightSwipeHandler = callback
-        },
-        top: (callback) => {
-            store.topSwipeHandler = callback
-        },
-        bottom: (callback) => {
-            store.bottomSwipeHandler = callback
-        }
+        left: (callback) => store.leftSwipeHandler = callback,
+        right: (callback) => store.rightSwipeHandler = callback,
+        top: (callback) => store.topSwipeHandler = callback,
+        bottom: (callback) => store.bottomSwipeHandler = callback,
+
+        leftSwiping: (callback) => store.leftSwipingHandler = callback,
+        rightSwiping: (callback) => store.rightSwipingHandler = callback,
+        topSwiping: (callback) => store.topSwipingHandler = callback,
+        bottomSwiping: (callback) => store.bottomSwipingHandler = callback
     }
 
     return AddEvent
