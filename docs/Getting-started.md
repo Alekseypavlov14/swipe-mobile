@@ -1,4 +1,4 @@
-## Start
+## Introduce
 
 This package helps you to use **swipes** in your JavaScript applications.
 

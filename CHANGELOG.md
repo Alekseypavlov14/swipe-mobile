@@ -1,3 +1,9 @@
+## Version 1.1.3
+
+Date: 26.04.2022  
+New:
+1) Change documentation
+
 ## Version 1.1.2
 
 Date: 26.04.2022
