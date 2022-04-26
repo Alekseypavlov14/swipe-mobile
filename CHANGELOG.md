@@ -1,3 +1,16 @@
+## Version 1.1.2
+
+Date: 26.04.2022
+New: 
+1) Add **repository** property to package.json
+2) Fix bag with documentation link
+
+## Version 1.1.1
+
+Date: 26.04.2022  
+New:
+1) Add documentation
+
 ## Version 1.1.0
 
 Date: 26.04.2022  

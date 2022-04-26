@@ -14,4 +14,4 @@ Function `initSwipe` returns EventController. It has the methods to set callback
 
 ## Documentation
 
-Full documentation is [here](./docs/Getting-started.md)
+Full documentation is [here](https://github.com/Alekseypavlov14/swipe-mobile/tree/master/docs/Getting-started.md)
