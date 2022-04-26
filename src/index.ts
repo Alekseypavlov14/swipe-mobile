@@ -5,7 +5,7 @@ import { AddSwipeEvent } from './lib/AddSwipeEvent'
 import { calcDistance } from './calculations/calcDistance'
 import { calcAngle } from './calculations/calcAngle'
 
-function initSwipe(element: HTMLElement): AddSwipeEvent {
+function initSwipe(element: HTMLElement) {
     const store: EventStore = {}
 
     const SwipeEvent: SwipeEvent = {

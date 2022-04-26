@@ -1,4 +1,3 @@
-import { SwipeEvent } from './SwipeEvent'
 import { SwipeHandler } from './SwipeHandler'
 
 export interface EventStore {
