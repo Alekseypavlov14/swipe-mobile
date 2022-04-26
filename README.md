@@ -10,4 +10,8 @@
         // do something ...
     })
 
-Function `initSwipe` return EventController. It has the methods to set callbacks for swipe! For create listener just use function `left` or another ones with callback with one argument `event`
+Function `initSwipe` returns EventController. It has the methods to set callbacks for swipe! To create listener, just use the function `left` or another one with callback with one parameter `event`.
+
+## Documentation
+
+Full documentation is [here](./docs/Getting-started.md)
