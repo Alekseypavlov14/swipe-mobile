@@ -14,12 +14,10 @@ export function touchMoveHandler(e: TouchEvent, SwipeEvent: SwipeEvent, store: E
     SwipeEvent.distance = calcDistance(SwipeEvent)
     SwipeEvent.angle = calcAngle(SwipeEvent)
 
-    if (SwipeEvent.distance > 40) {
-        const vector = calcVector(SwipeEvent)
+    const vector = calcVector(SwipeEvent)
 
-        if (vector === 0) return store.rightSwipingHandler && store.rightSwipingHandler(SwipeEvent)
-        if (vector === 1) return store.topSwipingHandler && store.topSwipingHandler(SwipeEvent)
-        if (vector === 2) return store.leftSwipingHandler && store.leftSwipingHandler(SwipeEvent)
-        if (vector === 3) return store.bottomSwipingHandler && store.bottomSwipingHandler(SwipeEvent)
-    }
+    if (vector === 0) return store.rightSwipingHandler && store.rightSwipingHandler(SwipeEvent)
+    if (vector === 1) return store.topSwipingHandler && store.topSwipingHandler(SwipeEvent)
+    if (vector === 2) return store.leftSwipingHandler && store.leftSwipingHandler(SwipeEvent)
+    if (vector === 3) return store.bottomSwipingHandler && store.bottomSwipingHandler(SwipeEvent)
 }

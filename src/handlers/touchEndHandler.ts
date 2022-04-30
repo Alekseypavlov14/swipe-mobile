@@ -14,12 +14,11 @@ export function touchEndHandler(e: TouchEvent, SwipeEvent: SwipeEvent, store: Ev
     SwipeEvent.distance = calcDistance(SwipeEvent)
     SwipeEvent.angle = calcAngle(SwipeEvent)
 
-    if (SwipeEvent.distance > 40) {
-        const vector = calcVector(SwipeEvent)
+    const vector = calcVector(SwipeEvent)
 
-        if (vector === 0) return store.rightSwipeHandler && store.rightSwipeHandler(SwipeEvent)
-        if (vector === 1) return store.topSwipeHandler && store.topSwipeHandler(SwipeEvent)
-        if (vector === 2) return store.leftSwipeHandler && store.leftSwipeHandler(SwipeEvent)
-        if (vector === 3) return store.bottomSwipeHandler && store.bottomSwipeHandler(SwipeEvent)
-    }
+    if (vector === 0) return store.rightSwipeHandler && store.rightSwipeHandler(SwipeEvent)
+    if (vector === 1) return store.topSwipeHandler && store.topSwipeHandler(SwipeEvent)
+    if (vector === 2) return store.leftSwipeHandler && store.leftSwipeHandler(SwipeEvent)
+    if (vector === 3) return store.bottomSwipeHandler && store.bottomSwipeHandler(SwipeEvent)
+    
 }
