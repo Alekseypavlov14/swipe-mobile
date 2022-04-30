@@ -1,3 +1,8 @@
+## Version 1.1.4
+Date: 30.04.2022  
+New: 
+1) Delete min distance for swipes
+
 ## Version 1.1.3
 
 Date: 26.04.2022  
