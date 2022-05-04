@@ -2,8 +2,9 @@ import { SwipeEvent } from './lib/SwipeEvent'
 import { EventStore } from './lib/EventStore'
 import { AddSwipeEvent } from './lib/AddSwipeEvent'
 
-import { touchEndHandler } from './handlers/touchEndHandler'
+import { touchStartHandler } from './handlers/touchStartHandler'
 import { touchMoveHandler } from './handlers/touchMoveHandler'
+import { touchEndHandler } from './handlers/touchEndHandler'
 
 function initSwipe(element: HTMLElement) {
     const store: EventStore = {}
@@ -19,12 +20,7 @@ function initSwipe(element: HTMLElement) {
     }
 
     element.addEventListener('touchstart', (e) => {
-        const TouchStartEvent = e.touches[0]
-
-        SwipeEvent.x0 = TouchStartEvent.clientX
-        SwipeEvent.y0 = TouchStartEvent.clientY
-
-        SwipeEvent.target = e.target
+        touchStartHandler(e, SwipeEvent)
     })
 
     element.addEventListener('touchmove', (e) => {
