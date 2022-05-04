@@ -11,11 +11,14 @@
     "build"
   ],
   "keywords": [
+    "swipe-mobile",
     "swipe",
+    "mobile",
     "swiper",
     "event",
     "events",
-    "handler"
+    "handler",
+    "touch"
   ],
   "author": "Aleksey Pavlov <aleshapavlov9@gmail.com>",
   "license": "ISC",
