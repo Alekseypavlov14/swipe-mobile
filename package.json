@@ -5,7 +5,8 @@
   "repository": "https://github.com/Alekseypavlov14/swipe-mobile",
   "main": "./build/index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "prepublish": "npm run build"
   },
   "files": [
     "build"
