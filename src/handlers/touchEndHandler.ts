@@ -16,9 +16,8 @@ export function touchEndHandler(e: TouchEvent, SwipeEvent: SwipeEvent, store: Ev
 
     const vector = calcVector(SwipeEvent)
 
-    if (vector === 0) return store.rightSwipeHandler && store.rightSwipeHandler(SwipeEvent)
-    if (vector === 1) return store.topSwipeHandler && store.topSwipeHandler(SwipeEvent)
-    if (vector === 2) return store.leftSwipeHandler && store.leftSwipeHandler(SwipeEvent)
-    if (vector === 3) return store.bottomSwipeHandler && store.bottomSwipeHandler(SwipeEvent)
-    
+    if (vector === 0) return store.rightSwipeHandlers.forEach(handler => handler(SwipeEvent))
+    if (vector === 1) return store.topSwipeHandlers.forEach(handler => handler(SwipeEvent))
+    if (vector === 2) return store.leftSwipeHandlers.forEach(handler => handler(SwipeEvent))
+    if (vector === 3) return store.bottomSwipeHandlers.forEach(handler => handler(SwipeEvent))
 }

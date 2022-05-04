@@ -7,7 +7,17 @@ import { touchMoveHandler } from './handlers/touchMoveHandler'
 import { touchEndHandler } from './handlers/touchEndHandler'
 
 function initSwipe(element: HTMLElement) {
-    const store: EventStore = {}
+    const store: EventStore = {
+        topSwipeHandlers: [],
+        rightSwipeHandlers: [],
+        bottomSwipeHandlers: [],
+        leftSwipeHandlers: [],
+
+        topSwipingHandlers: [],
+        rightSwipingHandlers: [],
+        bottomSwipingHandlers: [],
+        leftSwipingHandlers: []
+    }
 
     const SwipeEvent: SwipeEvent = {
         x0: 0,
@@ -32,15 +42,15 @@ function initSwipe(element: HTMLElement) {
     })
 
     const AddEvent: AddSwipeEvent = {
-        left: (callback) => store.leftSwipeHandler = callback,
-        right: (callback) => store.rightSwipeHandler = callback,
-        top: (callback) => store.topSwipeHandler = callback,
-        bottom: (callback) => store.bottomSwipeHandler = callback,
+        left: (callback) => store.leftSwipeHandlers.push(callback),
+        right: (callback) => store.rightSwipeHandlers.push(callback),
+        top: (callback) => store.topSwipeHandlers.push(callback),
+        bottom: (callback) => store.bottomSwipeHandlers.push(callback),
 
-        leftSwiping: (callback) => store.leftSwipingHandler = callback,
-        rightSwiping: (callback) => store.rightSwipingHandler = callback,
-        topSwiping: (callback) => store.topSwipingHandler = callback,
-        bottomSwiping: (callback) => store.bottomSwipingHandler = callback
+        leftSwiping: (callback) => store.leftSwipingHandlers.push(callback),
+        rightSwiping: (callback) => store.rightSwipingHandlers.push(callback),
+        topSwiping: (callback) => store.topSwipingHandlers.push(callback),
+        bottomSwiping: (callback) => store.bottomSwipingHandlers.push(callback)
     }
 
     return AddEvent

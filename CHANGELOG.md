@@ -1,3 +1,8 @@
+## Version 1.2.0
+Date: 04.05.2022  
+New: 
+1) Improve file structure
+
 ## Version 1.1.4
 Date: 30.04.2022  
 New: 

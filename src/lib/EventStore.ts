@@ -1,13 +1,13 @@
 import { SwipeHandler } from './SwipeHandler'
 
 export interface EventStore {
-    leftSwipeHandler?: SwipeHandler
-    rightSwipeHandler?: SwipeHandler
-    topSwipeHandler?: SwipeHandler,
-    bottomSwipeHandler?: SwipeHandler,
+    leftSwipeHandlers: SwipeHandler[]
+    rightSwipeHandlers: SwipeHandler[]
+    topSwipeHandlers: SwipeHandler[],
+    bottomSwipeHandlers: SwipeHandler[],
 
-    leftSwipingHandler?: SwipeHandler,
-    rightSwipingHandler?: SwipeHandler,
-    topSwipingHandler?: SwipeHandler,
-    bottomSwipingHandler?: SwipeHandler
+    leftSwipingHandlers: SwipeHandler[],
+    rightSwipingHandlers: SwipeHandler[],
+    topSwipingHandlers: SwipeHandler[],
+    bottomSwipingHandlers: SwipeHandler[]
 }

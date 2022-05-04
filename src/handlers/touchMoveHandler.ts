@@ -16,8 +16,8 @@ export function touchMoveHandler(e: TouchEvent, SwipeEvent: SwipeEvent, store: E
 
     const vector = calcVector(SwipeEvent)
 
-    if (vector === 0) return store.rightSwipingHandler && store.rightSwipingHandler(SwipeEvent)
-    if (vector === 1) return store.topSwipingHandler && store.topSwipingHandler(SwipeEvent)
-    if (vector === 2) return store.leftSwipingHandler && store.leftSwipingHandler(SwipeEvent)
-    if (vector === 3) return store.bottomSwipingHandler && store.bottomSwipingHandler(SwipeEvent)
+    if (vector === 0) return store.rightSwipingHandlers.forEach(handler => handler(SwipeEvent))
+    if (vector === 1) return store.topSwipingHandlers.forEach(handler => handler(SwipeEvent))
+    if (vector === 2) return store.leftSwipingHandlers.forEach(handler => handler(SwipeEvent))
+    if (vector === 3) return store.bottomSwipingHandlers.forEach(handler => handler(SwipeEvent))
 }
