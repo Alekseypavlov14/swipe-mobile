@@ -2,6 +2,7 @@
 Date: 04.05.2022  
 New: 
 1) Improve file structure
+2) Realize many handlers for one direction
 
 ## Version 1.1.4
 Date: 30.04.2022  
